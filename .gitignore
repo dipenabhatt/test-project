@@ -1,0 +1,7 @@
+.gitignore
+.gradle
+.idea
+.DS_Store
+app/bower_components
+app/dest
+app/node_modules
