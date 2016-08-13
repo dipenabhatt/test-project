@@ -4,5 +4,6 @@
 
             $scope.pageTitle = "Test Project";
             $scope.pageName = "Hello World!";
+            $scope.currentLocation = "Fremont,CA";
     }]);
 }());

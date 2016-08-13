@@ -2,27 +2,155 @@
 <html data-ng-app="myProject.com">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script src="dest/vendor.js"></script>
     <script src="dest/myProject.js"></script>
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
+    <style>
+        .geolocate{
+            float: right;
+            padding-right: 10px;
+        }
+        .geolocationvalue{
+            text-align: right;
+        }
+        .carousel{
+            width: 1409px;
+            height: 500px;
+        }
+
+        .carousel-inner > .item > img, .carousel-inner > .item > a > img{
+            width: 100%;
+            height: 20%;
+            object-fit: fill;
+        }
+
+        .carousel-inner{
+            height:100%;
+        }
+
+        .highlight{
+            /*border-radius: 25px;*/
+            border: 1px solid #000000;
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-bottom: 40px;
+            width: 430px;
+            height: 300px;
+        }
+
+        .leftfloating{
+            float: left;
+        }
+
+        .img{
+            width: inherit;
+            height: inherit;
+            /*border-radius: 25px;*/
+        }
+
+    </style>
 </head>
 <body data-ng-controller="TestCtrl">
-    <h1>{{pageTitle}}</h1>
-    <h2>{{pageName}}</h2>
 
-    <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Dropdown
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-        </ul>
+
+<div class="container-fluid">
+
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                Brand
+            </a>
+        </div>
+        <div class="navbar-form navbar-left">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+        <div class="navbar-header geolocate">
+            <div class="">
+                <a href="#">
+                    Current Location
+                </a>
+            </div>
+            <div class="geolocationvalue">
+                {{currentLocation}}
+            </div>
+        </div>
+
+    </nav>
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+
+            <div class="item active">
+                <img src="resources/images/09_Original.jpg" alt="Chania">
+            </div>
+
+            <div class="item">
+                <img src="resources/images/39_Original.jpg" alt="Chania">
+            </div>
+
+            <div class="item">
+                <img src="resources/images/79_Original.jpg" alt="Flower">
+            </div>
+
+            <div class="item">
+                <img src="resources/images/fb_challange.jpg" alt="Flower">
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
     </div>
+
+    <div style="margin-top: 70px;margin-bottom: 100px">
+
+        <div class="highlight leftfloating">
+            <div style="width: inherit;height: 200px;border: 1px solid #000000;">
+                <img src="resources/images/09_Original.jpg" class="img">
+            </div>
+            <div style="width: inherit;height: 100px"></div>
+        </div>
+
+        <div class="highlight leftfloating">
+            <div style="width: inherit;height: 200px">
+                <img src="resources/images/39_Original.jpg" class="img">
+            </div>
+            <div style="width: inherit;height: 100px"></div>
+        </div>
+
+        <div class="highlight leftfloating">
+            <div style="width: inherit;height: 200px">
+                <img src="resources/images/79_Original.jpg" class="img" >
+            </div>
+            <div style="width: inherit;height: 100px"></div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
 </body>
 </html>
